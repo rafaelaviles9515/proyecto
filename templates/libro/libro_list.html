@@ -1,0 +1,40 @@
+{%extends "base/base.html"%}
+{% block contenido %}
+
+	<link rel="stylesheet" type="text/css" href="/static/css/cuenta.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/cuenta-theme.min">
+	<table style="width:80%; margin-left:90px " class="table table-hover">
+		<thead>
+			<tr>
+				<td>Codigo</td>
+				<td>Nombre</td>
+			</tr>
+			
+		</thead>
+		<tbody>
+		{% if listlibro %}
+			{% for i in listlibro %}
+		
+		<tr>
+			<td>{{ i.codigo }}</td>
+			<td>{{ i.nombre }}</td>
+			<td>
+				{% if perms.biblioteca.change_libro %}
+					<a class="btn btn-primary" href="{% url 'libro_editar' i.codigo %}">Editar</a>
+				{% endif %}	
+				{% if perms.biblioteca.delete_libro %}
+					<a class="btn btn-danger" href="{% url 'libro_eliminar' i.codigo %}">Eliminar</a>
+				{% endif %}	
+			</td>
+			
+		</tr>	
+			{% endfor %}
+		{% else %}
+		No hay productos registrados
+		{% endif %}	
+		</tbody>
+	</table> 
+<script  type="text/javascript" src="/static/js/cuenta.min.js"></script>
+<script  type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+{% endblock %}

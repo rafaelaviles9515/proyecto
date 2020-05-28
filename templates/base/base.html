@@ -1,0 +1,31 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistemas de Biblioteca</title>
+	{%block CSS%}
+	<link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "js/scriptA.js" %}">
+	{%endblock CSS%}
+	
+</head>
+<body>
+	<div class="contenedor">
+			<link rel="stylesheet" type="text/css" href="/static/css/cuenta.min.css">
+			<link rel="stylesheet" type="text/css" href="/static/css/cuenta-theme.min">
+			<div align="center">
+				<h1>Sistema de Biblioteca</h1>
+			</div>
+		</div>
+{%block logout%}
+
+{%endblock logout%}
+{%block navegacion%}
+{%endblock navegacion%}
+
+{%block contenido%}
+{%endblock contenido%}
+
+</body>
+</html>
