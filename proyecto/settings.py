@@ -81,9 +81,9 @@ import dj_database_url
 from decouple import config
 
 DATABASES = [{
-    'default': dj_database_url.config {
+    'default': dj_database_url.config [{
         default=config('HEROKU_POSTGRESQL_PUCE_URL')
-}
+}]
 }
 #HEROKU_POSTGRESQL_PUCE_URL
 #DATABASE_URL
